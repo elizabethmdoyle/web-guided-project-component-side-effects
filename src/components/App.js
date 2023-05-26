@@ -12,6 +12,7 @@ export default function App() {
 
   const openDetails = id => {
     setCurrentFriendId(id)
+
   }
 
   const closeDetails = () => {
@@ -39,7 +40,7 @@ export default function App() {
       <h1>Some of my friends:</h1>
       {/* start by mapping over the friends array...*/
       friends.map(fr => {
-        return <Friend info={fr} key={fr.id} />
+        return <Friend info={fr} key={fr.id} openDetails={openDetails}/>
       })
 
       }
