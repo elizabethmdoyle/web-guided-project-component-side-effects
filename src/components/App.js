@@ -23,13 +23,26 @@ export default function App() {
   // The effect should consist of a call to the API using axios.
   // On success, set the array of friend objects from the API into state.
 
+   useEffect(() => {
+    axios.get(`${BASE_URL}/friends?api_key=${API_KEY}`)
+      .then(res => {
+        setFriends(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
 
- 
 
   return (
     <div className='container'>
       <h1>Some of my friends:</h1>
-      {/* start by mapping over the friends array...*/}
+      {/* start by mapping over the friends array...*/
+      friends.map(fr => {
+        return <Friend info={fr} key={fr.id} />
+      })
+
+      }
       {
         currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
       }
