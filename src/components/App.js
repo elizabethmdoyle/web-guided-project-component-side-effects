@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // 👉 TASK 1 - import the axios lib from node_modules
-
+import axios from 'axios'
 // 👉 TASK 2 - import the contants from constants/index.js
-
+import { BASE_URL, API_KEY } from '../constants'
 import Details from './Details'
 import Friend from './Friend';
 
@@ -22,6 +22,9 @@ export default function App() {
   // caused by the first render only. You'll need `useEffect` from React.
   // The effect should consist of a call to the API using axios.
   // On success, set the array of friend objects from the API into state.
+
+
+ 
 
   return (
     <div className='container'>
